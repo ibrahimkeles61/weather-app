@@ -1,3 +1,6 @@
+// const WEATHER_API_KEY = "72ebe1dab57e3f41277966254eafc935";
+import fetch from "node-fetch";
+
 export const setLocationObject = (locationObj, coordsObj) => {
 	const { lat, lon, name, unit } = coordsObj;
 	locationObj.setLat(lat);
@@ -22,6 +25,7 @@ export const getWeatherFromCoords = async (locationObj) => {
 	// 	console.log(err.stack);
 	// }
 
+	// serverless version----------------------------------
 	const urlDataObj = {
 		lat: locationObj.getLat(),
 		lon: locationObj.getLon(),
@@ -53,6 +57,7 @@ export const getCoordsFromApi = async (entryText, units) => {
 	// 	console.error(err.stack);
 	// }
 
+	// serverless version----------------------------------
 	const urlDataObj = {
 		text: entryText,
 		units: units,
